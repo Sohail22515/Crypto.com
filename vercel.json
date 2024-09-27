@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/coins/:id",
+        "destination": "/"
+      }
+    ]
+  }
+  
