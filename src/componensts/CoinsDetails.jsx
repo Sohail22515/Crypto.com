@@ -73,7 +73,7 @@ const CoinsDetails = () => {
     const fetchCoin = async () => {
       try {
         const { data } = await axios.get(`${server}/coins/${params.id}`,{timeout:5000});
-        const {data:chartData} = await axios.get(`${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`);
+        const {data:chartData} = await axios.get(`${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days},{timeout:5000}`);
         // console.log(data);
         // console.log(chartData);
         setCoin(data);  // Assuming setCoins is defined in the component
