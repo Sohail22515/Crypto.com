@@ -26,12 +26,40 @@ ChartJS.register(
         labels:date,
         datasets:[{
             label:`price in ${currency}`,
-            data:prices,borderColor:"rgb(255,99,132)",
-            background:"rgb(255,99,132,0.5)",
+            data:prices,
+            borderColor:"rgb(255,99,132)",
+            backgroundColor:"rgb(255,99,132,0.5)",
         }]
     }
 
-    
+    const options = {
+        responsive: true,
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Date/Time',
+            }
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: `Price in ${currency}`,
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'top'
+          },
+          title: {
+            display: true,
+            text: `Price over ${days}`
+          }
+        }
+      };
 
   return (
     <Line
