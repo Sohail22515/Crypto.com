@@ -72,7 +72,7 @@ const CoinsDetails = () => {
   useEffect(() => {
     const fetchCoin = async () => {
       try {
-        const { data } = await axios.get(`${server}/coins/${params.id}`,{timeout:10000});
+        const { data } = await axios.get(`${server}/coins/${params.id}`,{timeout:5000});
         const {data:chartData} = await axios.get(`${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`);
         // console.log(data);
         // console.log(chartData);
